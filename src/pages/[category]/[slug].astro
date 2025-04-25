@@ -1,0 +1,30 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+
+// ① SSG 時に /neuro-cell/hh-theory などを生成
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => {
+    // post.id === "neuro-cell/hh-theory"
+    const [category, slug] = post.id.split('/');
+    return {
+      params: { category, slug },  // ★ 両方とも文字列
+      props: { post },
+    };
+  });
+}
+
+// ② props の型定義
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+const { post } = Astro.props as Props;
+
+// ③ Markdown → コンポーネント化
+const { Content } = await render(post);
+---
+
+<BlogPost {...post.data}>
+  <Content />
+</BlogPost>
