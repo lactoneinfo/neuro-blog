@@ -5,16 +5,17 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+	--color-accent: #40A67A;
+	--color-accent-dark: #2E7D5D;
+	
+	--color-text: #333333;
+	--color-subtle: #60739F;
+
+	--color-bg: #FAF5E9;
+	--color-bg-soft: #E5E9F0;
+
+	--color-border: #C0C0C0;
+	--color-warn: #B85750;
 }
 @font-face {
 	font-family: 'Atkinson';
@@ -39,7 +40,7 @@ body {
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
+	color: rgb(var(--color-text));
 }
 p {
 	margin-bottom: 1em;
@@ -61,7 +62,7 @@ img {
 }
 code {
 	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
+	background-color: rgb(var(--color-subtle));
 	border-radius: 2px;
 }
 pre {
