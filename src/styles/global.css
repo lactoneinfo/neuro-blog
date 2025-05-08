@@ -11,32 +11,42 @@
 	--color-text: #333333;
 	--color-subtle: #174130;
 
-	--color-bg: #FAF5E9;
+	--color-bg: #fdfbf6;
 	--color-bg-soft: #FAF5E9;
 
 	--color-border: #C0C0C0;
 	--color-warn: #B85750;
 }
-/* m-plus-rounded-1c-regular - japanese_latin */
+/* ibm-plex-sans-jp-200 - japanese_latin */
 @font-face {
-	font-display: swap;
-	font-family: 'M PLUS Rounded 1c';
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'IBM Plex Sans JP';
+	font-style: normal;
+	font-weight: 200;
+	src: url('../fonts/ibm-plex-sans-jp-v6-japanese_latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* ibm-plex-sans-jp-regular - japanese_latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'IBM Plex Sans JP';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/fonts/m-plus-rounded-1c-v16-japanese_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+	src: url('../fonts/ibm-plex-sans-jp-v6-japanese_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* ibm-plex-sans-jp-600 - japanese_latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'IBM Plex Sans JP';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../fonts/ibm-plex-sans-jp-v6-japanese_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
   
-/* m-plus-rounded-1c-800 - japanese_latin */
-@font-face {
-	font-display: swap;
-	font-family: 'M PLUS Rounded 1c';
-	font-style: normal;
-	font-weight: 800;
-	src: url('/fonts/m-plus-rounded-1c-v16-japanese_latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
   
 body {
-	font-family: 'M PLUS Rounded 1c', sans-serif;
+	font-family: 'IBM Plex Sans JP', sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -44,17 +54,9 @@ body {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--color-text));
-}
-
-/* m-plus-rounded-1c rotate Z */
-p, h1, h2, h3, h4, h5, h6, li, td, th, span, code {
-	font-family: 'M PLUS Rounded 1c', sans-serif;
-	transform: rotateZ(0.03deg);
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	background-color: var(--color-bg-soft);
 }
   
-
 p {
 	margin-bottom: 1em;
 }
