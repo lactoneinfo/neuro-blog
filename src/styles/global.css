@@ -17,22 +17,26 @@
 	--color-border: #C0C0C0;
 	--color-warn: #B85750;
 }
+/* m-plus-rounded-1c-regular - japanese_latin */
 @font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-regular.woff') format('woff');
+	font-display: swap;
+	font-family: 'M PLUS Rounded 1c';
+	font-style: normal;
 	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
+	src: url('/fonts/m-plus-rounded-1c-v16-japanese_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+  
+/* m-plus-rounded-1c-800 - japanese_latin */
 @font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
 	font-display: swap;
+	font-family: 'M PLUS Rounded 1c';
+	font-style: normal;
+	font-weight: 800;
+	src: url('/fonts/m-plus-rounded-1c-v16-japanese_latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+  
 body {
-	font-family: 'Atkinson', sans-serif;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -41,6 +45,16 @@ body {
 	overflow-wrap: break-word;
 	color: rgb(var(--color-text));
 }
+
+/* m-plus-rounded-1c rotate Z */
+p, h1, h2, h3, h4, h5, h6, li, td, th, span, code {
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	transform: rotateZ(0.03deg);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+  
+
 p {
 	margin-bottom: 1em;
 }
