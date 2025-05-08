@@ -43,7 +43,11 @@
 	font-weight: 600;
 	src: url('../fonts/ibm-plex-sans-jp-v6-japanese_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-  
+
+html, body {
+	max-width: 100vw;
+	overflow-x: hidden;
+}
   
 body {
 	font-family: 'IBM Plex Sans JP', sans-serif;

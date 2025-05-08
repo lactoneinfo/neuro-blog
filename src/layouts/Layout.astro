@@ -39,4 +39,22 @@ main {
     flex: 1;
     overflow: auto;
 }
+
+@media (max-width: 720px) {
+  .wrapper {
+    max-width: 100vh;
+    overflow-x: hidden;
+  }
+  .content-wrapper {
+    max-width: 100vh;
+    overflow-x: hidden;
+  }
+
+  .wrapper > header,
+  .wrapper > :global(header) {
+    display: none;
+  }
+}
+
+
 </style>
