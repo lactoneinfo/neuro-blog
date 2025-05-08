@@ -26,6 +26,7 @@
     padding-left: 0.6em;
     margin: 2em 0 1em;
     line-height: 1.2;
+    letter-spacing: .08em;
 }
 .typography h2::before {
     content: '';
@@ -53,19 +54,8 @@
     padding: 0.6em 0.6em 0.2em 0.2em;
     border-bottom: 3px solid var(--color-accent);
     position: relative;
-    letter-spacing: 0.05em;
-}
-/*   
-.typography .page-title::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.1em;
-    width: 8px;
-    height: 1.6em;
-    background-color: var(--color-accent);
-} */
-  
+    letter-spacing: 0.15em;
+} 
 
 .typography p {
     margin-bottom: 1em;

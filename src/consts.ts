@@ -1,8 +1,8 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'Astro Blog';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_TITLE = '神経科学ノート';
+export const SITE_DESCRIPTION = '神経科学関連で学んだことのメモ';
 
 export interface MenuItem {
     label: string;
@@ -14,11 +14,11 @@ export interface MenuItem {
     {
       label: "神経科学",
       children: [
-        { label: "分子",     path: "/neuro-molecular" },
+        // { label: "分子",     path: "/neuro-molecular" },
         { label: "細胞",     path: "/neuro-cell" },
-        { label: "皮質領域", path: "/neuro-cortex" },
-        { label: "領域間・全脳", path: "/neuro-global" },
-        { label: "認知・行動", path: "/neuro-cognitive" },
+        // { label: "皮質領域", path: "/neuro-cortex" },
+        // { label: "領域間・全脳", path: "/neuro-global" },
+        // { label: "認知・行動", path: "/neuro-cognitive" },
       ],
     },
     // {
