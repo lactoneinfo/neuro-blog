@@ -6,13 +6,13 @@
 
 :root {
 	--color-accent: #40A67A;
-	--color-accent-dark: #2E7D5D;
+	--color-accent-dark: #174130;
 	
 	--color-text: #333333;
-	--color-subtle: #60739F;
+	--color-subtle: #174130;
 
 	--color-bg: #FAF5E9;
-	--color-bg-soft: #E5E9F0;
+	--color-bg-soft: #FAF5E9;
 
 	--color-border: #C0C0C0;
 	--color-warn: #B85750;
@@ -36,7 +36,6 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;

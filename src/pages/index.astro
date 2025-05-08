@@ -2,17 +2,20 @@
 import BaseHead from '../components/BaseHead.astro';
 import Layout from '../layouts/Layout.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import '../styles/typography.css';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Layout>
-		  <h2>ようこそ</h2>
-		  <p>ここは数理神経科学ブログのホームです。</p>
+			<div class="typography">
+				<h2>ようこそ</h2>
+				<p>ここは数理神経科学ブログのホームです。</p>
+			</div>
 		</Layout>
 	  </body>
 </html>

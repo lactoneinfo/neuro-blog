@@ -1,12 +1,11 @@
 
 
 .typography {
-    font-size: 18px;
+    font-size: 0.95em;
     line-height: 1.7;
     color: rgb(var(--color-text));
 }
 
-/* 見出し */
 .typography h1,
 .typography h2,
 .typography h3,
@@ -18,34 +17,133 @@
     line-height: 1.2;
 }
 
-.typography h1 { font-size: 3.052em; }
-.typography h2 { font-size: 2.441em; }
-.typography h3 { font-size: 1.953em; }
-.typography h4 { font-size: 1.563em; }
-.typography h5 { font-size: 1.25em; }
-.typography h6 { font-size: 1em; }
-
-.typography .page-title {
-    font-size: 3.052em;
-    font-weight: bold;
-    color: rgb(var(--color-text));
-    margin-bottom: 0.5em;
+.typography h1 { font-size: 2.2em; }
+.typography h2 {
+    font-size: 1.8em;
+    position: relative;
+    padding-top: 0.5em;
+    padding-left: 0.6em;
+    margin: 2em 0 1em;
+    line-height: 1.2;
+}
+.typography h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.4em;
+    width: 5px;
+    height: 1.2em;
+    background-color: var(--color-accent);
 }
 
-/* 段落・リスト・引用など */
+.typography h2:first-of-type {
+    border-top: none;
+}
+.typography h3 { font-size: 1.6em; }
+.typography h4 { font-size: 1.4em; }
+.typography h5 { font-size: 1.2em; }
+.typography h6 { font-size: 1.0em; }
+
+.typography .page-title {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: rgb(var(--color-text));
+    padding: 0.6em 0.6em 0.2em 0.6em;
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+}
+  
+.typography .page-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    width: 8px;
+    height: 1.6em;
+    background-color: var(--color-accent);
+}
+  
+
 .typography p {
     margin-bottom: 1em;
 }
 
-.typography ul,
-.typography ol {
-    margin-bottom: 1em;
-    padding-left: 1.5em;
+.typography ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5em;
+}
+  
+.typography ul li {
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 0.3em;
 }
 
+.typography ul li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    top: 0.35em;
+    color: var(--color-accent);
+    font-size: 1em;
+    line-height: 1;
+}
+
+.typography ol {
+    counter-reset: item;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5em;
+  }
+  
+.typography ol li {
+    counter-increment: item;
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 0.3em;
+}
+  
+.typography ol li::before {
+    content: counter(item) ".";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+  
+
 .typography blockquote {
-    border-left: 4px solid var(--color-accent);
+    border-left: 4px solid var(--color-subtle);
     padding-left: 1em;
     margin: 0 0 1em 0;
-    font-size: 1.333em;
 }
+
+.typography table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    font-size: 0.95em;
+}
+  
+.typography th,
+.typography td {
+    border: 1px solid var(--color-border);
+    padding: 0.5em 1em;
+    text-align: left;
+}
+  
+.typography thead {
+    background-color: var(--color-bg-soft);
+    font-weight: bold;
+    color: var(--color-text);
+}
+  
+.typography tbody tr:nth-child(odd) {
+    background-color: color-mix(in srgb, var(--color-bg) 95%, black 5%);
+}
+  
+.typography tbody tr:nth-child(even) {
+    background-color: var(--color-bg);
+}
+  

@@ -30,11 +30,24 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 						)}
 					</div>
 					<h1 class="page-title">{title}</h1>
-					<hr />
 				</div>
 				<slot />
 			</div>
 		</article>
 	</Layout>
 </body>
+<style>
+.title {
+  position: relative;
+}
+
+.date {
+  position: absolute;
+  right: 0;
+  bottom: 0.1em;
+  font-size: 0.9em;
+  color: var(--color-subtle);
+}
+
+</style>
 </html>
