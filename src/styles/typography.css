@@ -1,0 +1,49 @@
+.typography {
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgb(var(--gray-dark));
+}
+
+/* 見出し */
+.typography h1,
+.typography h2,
+.typography h3,
+.typography h4,
+.typography h5,
+.typography h6 {
+    margin: 0 0 0.5rem 0;
+    color: rgb(var(--black));
+    line-height: 1.2;
+}
+
+.typography h1 { font-size: 3.052em; }
+.typography h2 { font-size: 2.441em; }
+.typography h3 { font-size: 1.953em; }
+.typography h4 { font-size: 1.563em; }
+.typography h5 { font-size: 1.25em; }
+.typography h6 { font-size: 1em; }
+
+.typography .page-title {
+    font-size: 3.052em;
+    font-weight: bold;
+    color: rgb(var(--black));
+    margin-bottom: 0.5em;
+}
+
+/* 段落・リスト・引用など */
+.typography p {
+    margin-bottom: 1em;
+}
+
+.typography ul,
+.typography ol {
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+}
+
+.typography blockquote {
+    border-left: 4px solid var(--accent);
+    padding-left: 1em;
+    margin: 0 0 1em 0;
+    font-size: 1.333em;
+}

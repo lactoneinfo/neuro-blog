@@ -13,37 +13,37 @@ const posts = await getCollection('blog') as CollectionEntry<'blog'>[];
     <div class="menu-group">
       <p class="category-title">{item.label}</p>
 
-      {item.children?.map(sub => {
-        const prefix = sub.path!.split('?')[0].replace(/^\//, '');
-		console.log(prefix);
-        const list = posts.filter(p => p.id.startsWith(prefix + '/'));
+        {item.children?.map(sub => {
+          const prefix = sub.path!.split('?')[0].replace(/^\//, '');
+          console.log(prefix);
+          const list = posts.filter(p => p.id.startsWith(prefix + '/'));
 
-        return (
-          <details class="submenu">
-            <summary>
-              <HeaderLink href={sub.path!}>{sub.label}</HeaderLink>
-            </summary>
-            {list.length > 0 && (
-              <ul>
-                {list.map(post => (
-                  <li>
-                    <HeaderLink href={`/${post.id}`}>
-                      {post.data.title}
-                    </HeaderLink>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </details>
-        );
-      })}
+          return (
+            <details class="submenu">
+              <summary>
+                <HeaderLink href={sub.path!}>{sub.label}</HeaderLink>
+              </summary>
+              {list.length > 0 && (
+                <ul>
+                  {list.map(post => (
+                    <li>
+                      <HeaderLink href={`/${post.id}`}>
+                        {post.data.title}
+                      </HeaderLink>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </details>
+          );
+        })}
 
-      {/* path しかない単独カテゴリ（例：About） */}
-      {item.children === undefined && item.path && (
-        <HeaderLink href={item.path} class="single-link">
-          {item.label}
-        </HeaderLink>
-      )}
+        {/* path しかない単独カテゴリ（例：About） */}
+        {/* {item.children === undefined && item.path && (
+          <HeaderLink href={item.path} class="single-link">
+            {item.label}
+          </HeaderLink>
+        )} */}
     </div>
   ))}
 
@@ -51,28 +51,37 @@ const posts = await getCollection('blog') as CollectionEntry<'blog'>[];
     <!-- SVG アイコン -->
   </div>
 </header>
-
 <style>
 header {
-  flex: 0 0 240px;
+  display: flex;
+  flex-direction: column;
   padding: 1em;
   background: #fff;
   box-shadow: 2px 0 8px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
 }
+
 h1 {
   margin: 0 0 1em;
   font-size: 1.25em;
 }
-.menu-group {
-  margin-bottom: 1em;
+
+strong,
+b {
+	font-weight: 700;
 }
+a {
+	color: var(--accent);
+}
+a:hover {
+	color: var(--accent);
+}
+
 .category-title {
   margin: 0.5em 0 0.25em;
   font-weight: bold;
   color: var(--accent);
 }
+
 .submenu {
   margin: 0.25em 0 1em;
 }
@@ -89,18 +98,22 @@ h1 {
 .submenu li {
   margin: 0.25em 0;
 }
+
 .single-link {
   display: block;
   margin: 0.5em 0 1em;
   color: var(--black);
   text-decoration: none;
 }
+
 .social {
   margin-top: auto;
   display: flex;
   gap: 0.5em;
 }
+
 .app main {
   margin-left: 240px;
 }
 </style>
+  
