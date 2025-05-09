@@ -4,9 +4,14 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE, MENU, type MenuItem } from '../consts';
 
 const posts = await getCollection('blog') as CollectionEntry<'blog'>[];
+
+export interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
 ---
 
-<header>
+<header class={className}>
   <h1><HeaderLink href="/">{SITE_TITLE}</HeaderLink></h1>
 
   {MENU.map(item => (
