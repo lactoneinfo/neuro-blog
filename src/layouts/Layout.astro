@@ -3,10 +3,13 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 <div class="wrapper">
-  <button id="menu-toggle" class="hamburger">☰</button>
+  <button id="menu-toggle" class="hamburger">
+    <span class="line line-top"></span>
+    <span class="line line-middle"></span>
+    <span class="line line-bottom"></span>
+  </button>
   <div id="menu-overlay" class="menu-overlay"></div>
   <div id="mobile-header-wrapper" class="mobile-header">
-    <button id="menu-close" class="close-button">✕</button>
     <Header />
   </div>
   <div class="content-wrapper">
@@ -45,48 +48,45 @@ main {
   display: none;
 }
 
-.close-button {
-  display: none;
-}
-
 /* ====== Mobile Styles ====== */
 @media (max-width: 720px) {
   .hamburger {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 2rem;
+    height: 2rem;
     position: fixed;
     top: 1rem;
     right: 1rem;
     z-index: 1100;
     background: none;
     border: none;
-    font-size: 2rem;
+    padding: 0;
     cursor: pointer;
-    transition: opacity 0.3s;
   }
 
-  .close-button {
-    display: block;
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    z-index: 1100;
-    cursor: pointer;
+  .hamburger .line {
+    width: 100%;
+    height: 3px;
+    background: black;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+
+  .hamburger.active .line-top {
+    transform: rotate(45deg) translateX(0.33rem) translateY(0.38rem) scaleX(1.414);
+  }
+
+  .hamburger.active .line-middle {
     opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
   }
-
-  .close-button.show {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .hamburger.hide {
-    opacity: 0;
-    pointer-events: none;
+  
+  .hamburger.active .line-bottom {
+    transform: rotate(-45deg) translateX(0.33rem) translateY(-0.38rem) scaleX(1.414);
   }
 
   #mobile-header-wrapper {
@@ -130,26 +130,33 @@ main {
 </style>
 
 <script>
-  const toggle = document.getElementById('menu-toggle');
-  const closeBtn = document.getElementById('menu-close');
-  const header = document.getElementById('mobile-header-wrapper');
-  const overlay = document.getElementById('menu-overlay');
+  window.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('menu-toggle');
+    const header = document.getElementById('mobile-header-wrapper');
+    const overlay = document.getElementById('menu-overlay');
 
-  const showMenu = () => {
-    header?.classList.add('open');
-    overlay?.classList.add('show');
-    toggle?.classList.add('hide');
-    closeBtn?.classList.add('show');
-  };
+    if (!toggle || !header || !overlay) return;
 
-  const hideMenu = () => {
-    header?.classList.remove('open');
-    overlay?.classList.remove('show');
-    toggle?.classList.remove('hide');
-    closeBtn?.classList.remove('show');
-  };
+    const showMenu = () => {
+      header.classList.add('open');
+      overlay.classList.add('show');
+      toggle.classList.add('active');
+    };
 
-  toggle?.addEventListener('click', showMenu);
-  closeBtn?.addEventListener('click', hideMenu);
-  overlay?.addEventListener('click', hideMenu);
+    const hideMenu = () => {
+      header.classList.remove('open');
+      overlay.classList.remove('show');
+      toggle.classList.remove('active');
+    };
+
+    toggle.addEventListener('click', () => {
+      if (header.classList.contains('open')) {
+        hideMenu();
+      } else {
+        showMenu();
+      }
+    });
+
+    overlay.addEventListener('click', hideMenu);
+  });
 </script>
